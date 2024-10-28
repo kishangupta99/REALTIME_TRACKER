@@ -1,0 +1,17 @@
+Check if the browser supports geolocation.
+
+Set options for high accuracy, a 5-second timeout(har 5 sec pe ek new location send send krega evn object whi h tab bhi), and no caching(phle se kuchh save krke nii rkha hai jb change kroge har bar apse magenge).
+
+Use watchPosition to track the users location continuously.
+
+Emit the latitude and longitude via a socket with "send-location". Log any errors to the console
+
+Initialize a map centered at coordinates (0, 0) with a zoom level of 15 using Leaflet. Add OpenStreetMap tiles... to the map(jo world ka map aa jata h screen pe vo iski wjh se ata h)
+
+Create an empty object markers(jo nishan hota ha app kha pe ho ).
+
+When receiving location data via the socket, extract id, latitude, and longitude, and center the map on the new coordinates.
+
+If a marker for the id already  exists, update its position, otherwise, create a new marker at the given coordinates and add it to the map when a user disconnects, remove their marker from the map and delete it from markers.
+
+if they close the map window then marker comes to realtime place on the map
